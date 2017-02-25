@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 02</title>
+</head>
+<body>
+
+<h3>污染城市列表</h3>
+<ul id="aqi-list">
+    <!--
+        <li>第一名：福州（样例），10</li>
+          <li>第二名：福州（样例），10</li> -->
+</ul>
+
+<script type="text/javascript">
+
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+    var chnNumChar = {
+        0:"零",
+        1:"一",
+        2:"二",
+        3:"三",
+        4:"四",
+        5:"五",
+        6:"六",
+        7:"七",
+        8:"八",
+        9:"九"
+    };
+
+    var aqiDataText = aqiData.join(); //将二维转换为字符串，并保存到变量
+    var aqiDataTextArray = aqiDataText.split(',');  //将字符串拼接为一维数组，并保存到变量
+   // alert(aqiDataTextArray[1]);测试一维数组是否拼接成功
+    var aqiDataNum; //创建用于递增循环的变量
+    var aqiDataTextArrayLength = aqiDataTextArray.length; //创建用于保存数组长度的变量。
+    // alert(aqiDataTextArrayLength); 测试数组长度
+    var aqiDataTextArrayIndex = []; //创建一个用于保存空气质量指数的空数组
+
+
+    for(aqiDataNum = 0;aqiDataNum < aqiDataTextArrayLength;aqiDataNum++){
+        if(aqiDataNum % 2 != 0){
+            var aqiText= aqiDataTextArray[aqiDataNum];
+            aqiDataTextArrayIndex.push(aqiText);
+        }
+    }
+    //循环创建新数组，只保存空气质量指数
+
+    //alert(aqiDataTextArrayIndex[1]); 测试新数组
+
+
+    (function () {
+
+        /*
+         在注释下方编写代码
+         遍历读取aqiData中各个城市的数据
+         将空气质量指数大于60的城市显示到aqi-list的列表中
+         */
+        var aqi_list = document.getElementById('aqi-list');
+        /*
+        遍历读取城市数据。
+        */
+        var place,index;
+
+        onload = function () {
+            var IndexNum = 0;//计算排名
+            for(place = 0;place <=5;place++) {
+                for (index = 0; index <= 5; index++){
+
+                    if((place == index) &&(aqiDataTextArrayIndex[place] > 60) ){
+                        IndexNum++;
+                        aqi_list.innerHTML += "<li>" + "第" + IndexNum + "名：" + aqiData[place,index] + "</li>";
+
+                    }
+                }
+            }
+
+
+        }
+
+
+    })();
+
+
+
+</script>
+</body>
+</html>
