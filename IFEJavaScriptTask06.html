@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE JavaScript Task 06</title>
+    <style>
+        .ife_array div{
+            border:1px solid #000;
+            background-color: #ff151e;
+            width:auto;
+            height: 50px;
+            font-family: 微软雅黑;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            display: inline-block;
+        }
+        span{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="ife_number"></textarea>
+    <input type="button" id="left_unshift" value="左侧入" onclick="left_unshift();">
+    <input type="button" id="right_push" value="右侧入" onclick="right_push();">
+    <input type="button" id="left_shift" value="左侧出" onclick="left_shift();">
+    <input type="button" id="right_pop" value="右侧出" onclick="right_pop();">
+    <input type="button" id="papx" value="排序列表(冒泡排序法)" onclick="papx();">
+    <br>
+    <input type="text" id="search_text">
+    <input type="button" id="search" value="模糊查询" onclick="search_array()">
+    <p>排序可视化没思路，欢迎在我的github分享你的实现思路。</p>
+
+    <div class="ife_array" id="ife_array_div">
+    </div>
+</body>
+</html>
+<script>
+    var queue = [];
+
+    var ife_number_array = [];
+
+
+
+    
+    function ifeNumberArrayTextArea(ife_number) {
+
+
+        ife_number = document.getElementById('ife_number').value;
+
+        ife_number_array = [];
+
+        var ifeNumberTextArray = ["-",",","，","\n"];
+        var i;
+        var j = 0;
+        for (i = 0; i < ifeNumberTextArray.length; i++) {
+            if (ife_number.indexOf(ifeNumberTextArray[i]) > 0) {
+                ifeNumberText = ifeNumberTextArray[i];
+                ife_number_array = ife_number.split(ifeNumberText);
+                j++;
+
+            }
+        }
+
+        if(j == 0){
+            ife_number_array[0] = ife_number;
+        }
+
+        return ife_number_array;
+    }
+
+    var test1;
+
+    function search_array() {
+
+        var text = document.getElementById('search_text').value;
+
+        for(var i = 0; i < queue.length; i++){
+
+            var queueText = document.getElementById('div' + i).innerHTML;
+
+            var queueTextString = String(queueText);
+
+            var queueTestReplace = queueText.replace(text,"<span>" + text + "</span>");
+
+
+            queue[i] = queueTestReplace;
+
+            ife_queue_all();
+
+
+
+
+        }
+
+    }
+
+    function left_unshift() {
+        ifeNumberArrayTextArea();
+        for(var i = 0; i < ife_number_array.length;i++){
+            if(Number(ife_number_array[i]) < 10 || Number(ife_number_array[i]) >100) {
+                return alert("您输入的数字范围有误！");
+            }
+            else{
+                queue.unshift(ife_number_array[i]);
+
+            }
+        }
+        ife_queue_all();
+        return queue;
+    }
+
+    function right_push() {
+        ifeNumberArrayTextArea();
+        for(var i = 0; i < ife_number_array.length;i++){
+            if(Number(ife_number) < 10 || Number(ife_number) >100) {
+                return alert("您输入的数字范围有误！");
+        }
+        else{
+                queue.push(ife_number_array[i]);
+            }
+
+        }
+            ife_queue_all();
+            return queue;
+
+    }
+
+    function left_shift(ife_number) {
+            ife_number = queue[0];
+            alert(queue.shift(ife_number));
+            ife_queue_all();
+            return queue;
+
+    }
+
+    function right_pop(ife_number) {
+            ife_number = queue[queue.length - 1];
+            alert(queue.pop(ife_number));
+            ife_queue_all();
+            return queue;
+
+    }
+
+
+    function ife_queue_all() {
+        if(queue.length > 60){
+            return alert("队列元素超过60个，无法再添加。");
+        }
+        document.getElementById('ife_array_div').innerHTML = "";
+        for (var i = 0; i < queue.length; i++) {
+            document.getElementById('ife_array_div').innerHTML += "<div id ='div" + i + "'>"  +  queue[i] +"</div>";
+        }
+
+    }
+
+    function papx() {
+        for(var i = 0; i <= queue.length - 1;i++){
+            for(var j =0; j <= queue.length - i;j++){
+                if(queue[j] < queue[j+1]){
+                    var t = queue[j];
+                    queue[j] = queue[j+1];
+                    queue[j+1] = t;
+                    ife_queue_all();
+                }
+            }
+        }
+    }
+
+</script>
