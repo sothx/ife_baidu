@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE Multiple Task 01</title>
+</head>
+<body>
+    <label>名称</label>
+    <input type="text" id="input1">
+    <input type="button" value="验证" onclick="input1text();">
+    <div id="input1_message"></div>
+    <label>名称</label>
+    <input type="text"><input type="button" value="验证">
+    <div  id="input2_message"></div>
+    <label>名称</label>
+    <input type="text"><input type="button" value="验证">
+    <div  id="input3_message"></div>
+</body>
+</html>
+<script>
+    function input1text() {
+
+        document.getElementById('input1_message').innerHTML = "";
+
+        var input1Text = document.getElementById('input1');
+        if(input1Text.value == ""){
+            return document.getElementById('input1_message').innerHTML = "姓名不能为空";
+        }
+        else if(4 > input1Text.value.length || input1Text.value.length > 16){
+            return document.getElementById('input1_message').innerHTML = "必填，长度在4-16个字符";
+        }
+        return document.getElementById('input1_message').innerHTML = "填写的内容正确";
+
+    }
+</script>
