@@ -32,7 +32,10 @@
 
 
     function left_unshift(ife_number) {
-            ife_number = document.getElementById('ife_number').value;
+       if(queue.length > 60){
+        return alert("队列元素超过60个，无法再添加。");
+        }
+        ife_number = document.getElementById('ife_number').value;
         if(Number(ife_number) < 10 || Number(ife_number) >100) {
             return alert("您输入的数字范围有误！");
         }
@@ -42,7 +45,10 @@
     }
 
     function right_push(ife_number) {
-            ife_number = document.getElementById('ife_number').value;
+        if(queue.length > 60){
+            return alert("队列元素超过60个，无法再添加。");
+        }
+        ife_number = document.getElementById('ife_number').value;
         if(Number(ife_number) < 10 || Number(ife_number) >100) {
             return alert("您输入的数字范围有误！");
         }
@@ -70,9 +76,6 @@
 
 
     function ife_queue_all() {
-        if(queue.length > 60){
-            return alert("队列元素超过60个，无法再添加。");
-        }
         document.getElementById('ife_array_div').innerHTML = "";
         for (var i = 0; i < queue.length; i++) {
             document.getElementById('ife_array_div').innerHTML += "<div id ='div" + i + "'>"  + "</div>";
