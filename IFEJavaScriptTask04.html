@@ -4,39 +4,41 @@
     <meta charset="UTF-8">
     <title>IFE JavaScript Task 04</title>
     <style>
-        .ife_array div{
-            border:1px solid #000;
-            background-color: #ff151e;
-            width:50px;
-            height:50px;
-            font-family: 微软雅黑;
-            font-size: 18px;
-            text-align: center;
-            line-height: 50px;
-            display: inline-block;
+        //创建盒子样式
+        .ife_array div{ 
+            border:1px solid #000;      /*设置盒子边框*/
+            background-color: #ff151e;  /*设置盒子背景颜色*/
+            width:50px;     /*设置宽度*/
+            height:50px;    /*设置高度*/
+            font-family: 微软雅黑;  /*设置字体*/
+            font-size: 18px;    /*设置字体大小*/
+            text-align: center; /*文本居中*/
+            line-height: 50px;  /*行高与宽度对齐，实现字体居中*/
+            display: inline-block;  /*通过行内块元素实现块元素类float对齐*/
         }
     </style>
 </head>
 <body>
-    <input type="number" id="ife_number">
-    <input type="button" id="left_unshift" value="左侧入" onclick="left_unshift();">
-    <input type="button" id="right_push" value="右侧入" onclick="right_push();">
-    <input type="button" id="left_shift" value="左侧出" onclick="left_shift();">
-    <input type="button" id="right_pop" value="右侧出" onclick="right_pop();">
+    <input type="number" id="ife_number">   <!--数字输入框-->
+    <!--四个操纵按钮-->
+    <input type="button" id="left_unshift" value="左侧入" onclick="left_unshift();">   
+    <input type="button" id="right_push" value="右侧入" onclick="right_push();">  
+    <input type="button" id="left_shift" value="左侧出" onclick="left_shift();">  
+    <input type="button" id="right_pop" value="右侧出" onclick="right_pop();"> 
     <div class="ife_array" id="ife_array_div">
     </div>
 </body>
 </html>
 <script>
-    var queue = [];
-
+    var queue = []; //创建数组保存键入的数字
+    //点击"左侧入"，将input中输入的数字从左侧插入队列中
     function left_unshift(ife_number) {
         ife_number = document.getElementById('ife_number').value;
         queue.unshift(ife_number);
         ife_queue_all();
         return queue;
     }
-
+     //点击"右侧入"，将input中输入的数字从右侧插入队列中
     function right_push(ife_number) {
         ife_number = document.getElementById('ife_number').value;
         queue.push(ife_number);
@@ -44,7 +46,7 @@
         return queue;
 
     }
-
+     //点击"左侧出"，读取并删除队列左侧第一个元素，并弹窗显示元素中数值
     function left_shift(ife_number) {
         ife_number = queue[0];
         alert(queue.shift(ife_number));
@@ -52,7 +54,7 @@
         return queue;
 
     }
-
+    //点击"右侧出"，读取并删除队列又侧第一个元素，并弹窗显示元素中数值
     function right_pop(ife_number) {
         ife_number = queue[queue.length - 1];
         alert(queue.pop(ife_number));
@@ -60,7 +62,7 @@
         return queue;
 
     }
-
+    //循环打印保存了所有数列的数组
     function ife_queue_all() {
         document.getElementById('ife_array_div').innerHTML = "";
         for(var i = 0; i < queue.length;i++){
