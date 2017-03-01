@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE HTML CSS Task 03</title>
+    <style>
+        /*清除默认样式*/
+        body,p{
+            padding: 0;
+            margin: 0;
+        }
+        /*设置主体内容样式*/
+        .content{
+            background-color: #eee;
+            border: 1px solid #999;
+            padding:20px;
+            margin:20px;
+        }
+        /*左边的盒子样式*/
+        .div_left{
+            width:180px;
+            height:auto;
+            background-color: #fff;
+            border: 1px solid #999;
+            float:left;
+            padding:20px;}
+        /*左边盒子内的小盒子样式*/
+        .div_left div{
+            background-color: #eee;
+            border: 1px solid #999;
+            width:80px;
+            height:80px;
+            float:left;
+        }
+        /*左边盒子内的小盒子文字样式*/
+        .div_left div p{
+            font-size:14px;
+            text-align: center;
+            line-height: 40px;
+        }
+        /*团队名称文字样式*/
+        .div_left p{
+            text-align: center;
+        }
+        /*设置主内容盒子的样式*/
+        .div_center{
+            background-color: #fff;
+            border: 1px solid #999;
+            height:100%;
+            padding:20px;
+            margin:0 140px 0 240px;
+        }
+        /*右边盒子*/
+        .div_right{
+            float:right;
+            width:78px;
+            background-color: #fff;
+            border: 1px solid #999;
+            padding:20px 20px 0 20px;
+        }
+        /*右边盒子的组图*/
+        .div_right div{
+            background-color: #eee;
+            border: 1px solid #999;
+            float:left;
+            width:79px;
+            height:79px;
+            margin-bottom: 20px;
+        }
+        /*右边盒子组图的字体*/
+        .div_right div p{
+            font-size:14px;
+            text-align: center;
+            line-height: 35px;
+        }
+        /*用于清除浮动*/
+        .clearfix {
+            overflow: auto;
+        }
+        /*通过媒体查询设置最小宽度大小，防止内容过度变形*/
+        @media screen and (max-width: 770px) {
+            .div_left{
+                display: none;
+            }
+            .div_right{
+                display: none;
+            }
+            .div_center{
+                margin:auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content clearfix">
+        <div class="div_left">
+            <div><p>个人logo</p><p>80x80</p></div>
+            <p>团队名称</p>
+        </div>
+        <div class="div_right">
+            <div><p>个人logo</p><p>80x80</p></div>
+            <div><p>个人logo</p><p>80x80</p></div>
+            <div><p>个人logo</p><p>80x80</p></div>
+            <div><p>个人logo</p><p>80x80</p></div>
+        </div>
+        <div class="div_center">
+            <p>关于你们团队的介绍。</p>
+            <p>可以给我们解释一下团队名称的来历，或是分别介绍你们的团队成员。</p>
+            <p>(以下为示例)</p
+            <p>百度前端技术学院是一个为大学生创办的免费的前端技术实践、分享、交流平台。由百度校园招聘组、百度校园品牌部、百度前端技术部以及多个百度的前端团队联合创办。学院组织了一批百度在职工程师，精心编写了数十个实践编码任务，将技术知识点系统有机地串联在各个充满趣味与挑战的任务中，同学们通过实际地编码练习来掌握知识，再辅以互相评价、学习笔记等方式，加深对于学习内容的理解。在过去的三年中，百度前端技术学院累积吸引了上万名同学参加，并且有数十名同学在学习后，顺利加入了百度，成为了百度的前端工程师。2017年新学期，我们在保留原有的已经经历过实践历练的模式下，又加入了更多的工程师导师资源，以及新的内容，希望能够帮助有志于通过技术改变生活的同学们掌握到希望学到的技术。</p>
+        </div>
+    </div>
+</body>
+</html>
