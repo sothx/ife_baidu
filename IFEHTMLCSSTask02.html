@@ -41,7 +41,7 @@
             background-color: #DEDEDE;
             padding:25px 20px 25px 20px;
         }
-        section{
+        section,form{
             background-color: #fff;
             padding:80px 30px 40px 30px;
             border-right:2px solid #979797;
@@ -82,6 +82,48 @@
             color:#fff;
             line-height: 100px;
         }
+        form h2{
+            line-height: 40px;
+            border-left:5px solid #979797;
+            padding-left: 10px;
+            font-weight: normal;
+        }
+        form div{
+            margin: 0 auto;
+            width:300px;
+            font-family: "Adobe 宋体 Std L";
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .form-content{
+            line-height: 14px;
+            width: 115px;
+            float: left;
+        }
+        form div p{
+            color:#979797;
+            font-size: 12px;
+            float: right;
+        }
+        label,input{
+            margin-bottom: 10px;
+        }
+        textarea{
+            width: 300px;
+            height: 120px;
+        }
+        button{
+            display: block;
+            width:100%;
+            height: 50px;
+            vertical-align: middle;
+            background-color:#d43f3a;
+            border:0;
+
+        }
+        button span{
+            color:#fff;
+        }
         /*用于清除浮动*/
         .clearfix {
             clear: both;
@@ -91,7 +133,7 @@
                 width:909px;
             }
         }
-    </style>
+</style>
 </head>
 <body>
     <header>
@@ -127,7 +169,7 @@
             <p>在过去的三年中，百度前端技术学院累积吸引了上万名同学参加，并且有数十名同学在学习后，顺利加入了百度，成为了百度的前端工程师。</p>
             <p>2017年新学期，我们在保留原有的已经经历过实践历练的模式下，又加入了更多的工程师导师资源，以及新的内容，希望能够帮助有志于通过技术改变生活的同学们掌握到希望学到的技术。</p>
             <p>新学期报名从即日起到3月15日，整个学期会进行到4月24日，期待大家的踊跃参加！</p>
-            <img src="images/1.jpg" height="105" width="135"/>
+            <img src="images/1.jpg" height="105" width="135"/> <img src="images/1.jpg" height="105" width="135"/> <img src="images/1.jpg" height="105" width="135"/> <img src="images/1.jpg" height="105" width="135"/> <img src="images/1.jpg" height="105" width="135"/> <img src="images/1.jpg" height="105" width="135"/> <img src="images/1.jpg" height="105" width="135"/> <img src="images/1.jpg" height="105" width="135"/>
         </section>
 
         <section>
@@ -141,9 +183,55 @@
             <p>新学期报名从即日起到3月15日，整个学期会进行到4月24日，期待大家的踊跃参加！</p>
             <img src="images/2.jpg" height="105" width="135"/>
         </section>
+
+        <form>
+            <h2>这是侧栏的标题</h2>
+            <div>
+                <label class="form-content">请输入邮箱地址</label>
+                <input type="text" value="这是一个文本输入框">
+                <p>邮箱地址请按要求格式输入</p>
+            </div>
+            <div class="clearfix"></div>
+            <div>
+                <label class="form-content">请输入密码</label>
+                <input type="password" value="1234567890">
+                <label class="form-content">请重复输入密码</label>
+                <input type="password" value="1234567890">
+                <p>密码请为6-16位英文数字</p>
+            </div>
+            <div class="clearfix"></div>
+            <div>
+                <label class="form-content">性别</label>
+                <input type="radio" checked="checked" name="sex" value="男" id="boy"><label for="boy">男</label>
+                <input type="radio" name="sex" value="女" id="girl"><label for="girl">女</label>
+            </div>
+            <div>
+                <label class="form-content">城市</label>
+                <select>
+                    <option value="北京">北京</option>
+                    <option value="上海">上海</option>
+                    <option value="广州">广州</option>
+                    <option value="深圳">深圳</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-content">爱好</label>
+                <input type="checkbox" name="like" value="运动" id="sports"><label for="sports">运动</label>
+                <input type="checkbox" name="like" value="艺术" id="art"><label for="art">艺术</label>
+                <input type="checkbox" name="like" value="科学" id="science"><label for="science">科学</label>
+            </div>
+            <div>
+                <label class="form-content">个人描述</label>
+                <textarea>这是一个多行输入框，输入您的个人描述</textarea>
+            </div>
+            <div class="form-button">
+                <button value="确认提交"><span>确认提交</span></button>
+            </div>
+
+        </form>
     </main>
     <footer>
         <p>版权所有</p>
-    </footer>
+   </footer>
 </body>
 </html>
