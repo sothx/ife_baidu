@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE HTML CSS Task 02</title>
+    <style>
+        body,header,nav,main,section,address,footer,h1,h2,h3,p,a,ul,li{
+            padding: 0;
+            margin:0;
+            text-decoration:none;
+        }
+        header{
+            height: 100px;
+            width:100%;
+            border-bottom: solid 2px #DEDEDE;
+        }
+        h1{
+            background-image: url(images/logo.png);
+            background-repeat: no-repeat;
+            width:410px;
+            height:100px;
+            text-indent: -9999px;
+            float: left;
+            background-position: center center;
+            background-size:80%;
+        }
+        nav{
+            float: right;
+        }
+        nav ul li{
+            float:left;
+            display: block;
+            font-size: 24px;
+            line-height: 80px;
+            text-align: center;
+            padding-right:4vw;
+            position: relative;
+            font-family:微软雅黑;
+        }
+        main{
+            background-color: #DEDEDE;
+            padding:25px 20px 25px 20px;
+        }
+        section{
+            background-color: #fff;
+            padding:80px 30px 40px 30px;
+            border-right:2px solid #979797;
+            border-bottom:2px solid #979797;
+            margin-bottom: 20px;
+
+        }
+        h2,h3,address,p{
+            font-family: "微软雅黑";
+        }
+        h2{
+            font-size:22px;
+            line-height:60px;
+        }
+        h3{
+            color:#979797;
+            font-size: 14px;
+            line-height: 30px;
+        }
+        p{
+            text-indent: 2em;
+        }
+        address{
+            font-size: 12px;
+            font-style: normal;
+            color:#979797;
+            line-height: 30px;
+        }
+        .writer{
+            padding-right: 10px;
+        }
+        footer{
+            height:100px;
+            background-color: #000;
+        }
+        footer p{
+            text-align: center;
+            color:#fff;
+            line-height: 100px;
+        }
+        /*用于清除浮动*/
+        .clearfix {
+            clear: both;
+        }
+        @media screen and (max-width: 909px) {
+            header {
+                width:909px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>百度前端技术学院</h1>
+        <nav>
+            <ul>
+                <li>首页</li>
+                <li>所有课程</li>
+                <li>精选笔记</li>
+                <li>学院贴吧</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="clearfix"></div>
+    <main>
+        <section>
+            <h2>面向大学生的前端技术学习平台</h2>
+            <h3>由百度创办的免费前端技术学习实践、交流、分享平台</h3>
+            <address><a class="writer">百度</a><a class="writer">2017/3/2</a></address>
+            <p>百度前端技术学院是一个为大学生创办的免费的前端技术实践、分享、交流平台。由百度校园招聘组、百度校园品牌部、百度前端技术部以及多个百度的前端团队联合创办。</p>
+            <p>学院组织了一批百度在职工程师，精心编写了数十个实践编码任务，将技术知识点系统有机地串联在各个充满趣味与挑战的任务中，同学们通过实际地编码练习来掌握知识，再辅以互相评价、学习笔记等方式，加深对于学习内容的理解。</p>
+            <p>在过去的三年中，百度前端技术学院累积吸引了上万名同学参加，并且有数十名同学在学习后，顺利加入了百度，成为了百度的前端工程师。</p>
+            <p>2017年新学期，我们在保留原有的已经经历过实践历练的模式下，又加入了更多的工程师导师资源，以及新的内容，希望能够帮助有志于通过技术改变生活的同学们掌握到希望学到的技术。</p>
+            <p>新学期报名从即日起到3月15日，整个学期会进行到4月24日，期待大家的踊跃参加！</p>
+        </section>
+
+        <section>
+            <h2>面向大学生的前端技术学习平台</h2>
+            <h3>由百度创办的免费前端技术学习实践、交流、分享平台</h3>
+            <address><a class="writer">百度</a><a class="writer">2017/3/2</a></address>
+            <p>百度前端技术学院是一个为大学生创办的免费的前端技术实践、分享、交流平台。由百度校园招聘组、百度校园品牌部、百度前端技术部以及多个百度的前端团队联合创办。</p>
+            <p>学院组织了一批百度在职工程师，精心编写了数十个实践编码任务，将技术知识点系统有机地串联在各个充满趣味与挑战的任务中，同学们通过实际地编码练习来掌握知识，再辅以互相评价、学习笔记等方式，加深对于学习内容的理解。</p>
+            <p>在过去的三年中，百度前端技术学院累积吸引了上万名同学参加，并且有数十名同学在学习后，顺利加入了百度，成为了百度的前端工程师。</p>
+            <p>2017年新学期，我们在保留原有的已经经历过实践历练的模式下，又加入了更多的工程师导师资源，以及新的内容，希望能够帮助有志于通过技术改变生活的同学们掌握到希望学到的技术。</p>
+            <p>新学期报名从即日起到3月15日，整个学期会进行到4月24日，期待大家的踊跃参加！</p>
+            <img src="images/1.jpg" height="105" width="135"/>
+        </section>
+
+        <section>
+            <h2>面向大学生的前端技术学习平台</h2>
+            <h3>由百度创办的免费前端技术学习实践、交流、分享平台</h3>
+            <address><a class="writer">百度</a><a class="writer">2017/3/2</a></address>
+            <p>百度前端技术学院是一个为大学生创办的免费的前端技术实践、分享、交流平台。由百度校园招聘组、百度校园品牌部、百度前端技术部以及多个百度的前端团队联合创办。</p>
+            <p>学院组织了一批百度在职工程师，精心编写了数十个实践编码任务，将技术知识点系统有机地串联在各个充满趣味与挑战的任务中，同学们通过实际地编码练习来掌握知识，再辅以互相评价、学习笔记等方式，加深对于学习内容的理解。</p>
+            <p>在过去的三年中，百度前端技术学院累积吸引了上万名同学参加，并且有数十名同学在学习后，顺利加入了百度，成为了百度的前端工程师。</p>
+            <p>2017年新学期，我们在保留原有的已经经历过实践历练的模式下，又加入了更多的工程师导师资源，以及新的内容，希望能够帮助有志于通过技术改变生活的同学们掌握到希望学到的技术。</p>
+            <p>新学期报名从即日起到3月15日，整个学期会进行到4月24日，期待大家的踊跃参加！</p>
+            <img src="images/2.jpg" height="105" width="135"/>
+        </section>
+    </main>
+    <footer>
+        <p>版权所有</p>
+    </footer>
+</body>
+</html>
