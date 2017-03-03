@@ -37,8 +37,12 @@
 </body>
 </html>
 <script>
-    var queue = []; 
-    var ife_number_array = [];  
+    var queue = [];
+
+    var ife_number_array = [];
+
+
+
     
     function ifeNumberArrayTextArea(ife_number) {
 
@@ -66,6 +70,7 @@
         return ife_number_array;
     }
 
+    var test1;
 
     function search_array() {
 
@@ -92,6 +97,9 @@
     }
 
     function left_unshift() {
+        if(queue.length > 60){
+            return alert("队列元素超过60个，无法再添加。");
+        }
         ifeNumberArrayTextArea();
         for(var i = 0; i < ife_number_array.length;i++){
             if(Number(ife_number_array[i]) < 10 || Number(ife_number_array[i]) >100) {
@@ -107,6 +115,9 @@
     }
 
     function right_push() {
+        if(queue.length > 60){
+            return alert("队列元素超过60个，无法再添加。");
+        }
         ifeNumberArrayTextArea();
         for(var i = 0; i < ife_number_array.length;i++){
             if(Number(ife_number) < 10 || Number(ife_number) >100) {
@@ -140,9 +151,6 @@
 
 
     function ife_queue_all() {
-        if(queue.length > 60){
-            return alert("队列元素超过60个，无法再添加。");
-        }
         document.getElementById('ife_array_div').innerHTML = "";
         for (var i = 0; i < queue.length; i++) {
             document.getElementById('ife_array_div').innerHTML += "<div id ='div" + i + "'>"  +  queue[i] +"</div>";
