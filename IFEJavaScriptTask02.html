@@ -23,62 +23,6 @@
         ["成都", 90],
         ["西安", 100]
     ];
-    var chnNumChar = {
-        0:"零",
-        1:"一",
-        2:"二",
-        3:"三",
-        4:"四",
-        5:"五",
-        6:"六",
-        7:"七",
-        8:"八",
-        9:"九"
-    };
-    var aqiDataText = aqiData.join(); //将二维转换为字符串，并保存到变量
-    var aqiDataTextArray = aqiDataText.split(',');  //将字符串拼接为一维数组，并保存到变量
-   // alert(aqiDataTextArray[1]);测试一维数组是否拼接成功
-    var aqiDataNum; //创建用于递增循环的变量
-    var aqiDataTextArrayLength = aqiDataTextArray.length; //创建用于保存数组长度的变量。
-    // alert(aqiDataTextArrayLength); 测试数组长度
-    var aqiDataTextArrayIndex = []; //创建一个用于保存空气质量指数的空数组
-    var aqiDataTextArrayPlace = []; //创建一个用于保存地点的空数组
-
-    for(aqiDataNum = 0;aqiDataNum < aqiDataTextArrayLength;aqiDataNum++){
-        if(aqiDataNum % 2 != 0){
-            var aqiText= aqiDataTextArray[aqiDataNum];
-            aqiDataTextArrayIndex.push(aqiText);
-        }
-    }
-    //循环创建新数组，只保存空气质量指数
-
-    for(aqiDataNum = 0;aqiDataNum < aqiDataTextArrayLength;aqiDataNum++){
-        if(aqiDataNum % 2 == 0){
-            var aqiText = aqiDataTextArray[aqiDataNum];
-            aqiDataTextArrayPlace.push(aqiText);
-        }
-    }
-    //循环创建新数组，只保存地名
-
-//使用冒泡算法进行排序
-var aqiDataTextArrayIndexLength = aqiDataTextArrayIndex.length;
-    var t,q;
-    var i,j;
-    for(i = 0; i <= aqiDataTextArrayIndexLength-1; i++){
-        for(j = 0; j <= aqiDataTextArrayIndexLength - 1;j++){
-            if(Number(aqiDataTextArrayIndex[j]) < Number(aqiDataTextArrayIndex[j+1])){
-                t = aqiDataTextArrayIndex[j];
-                aqiDataTextArrayIndex[j] = aqiDataTextArrayIndex[j+1];
-                aqiDataTextArrayIndex[j+1] = t;
-
-
-
-                q = aqiDataTextArrayPlace[j];
-                aqiDataTextArrayPlace[j] = aqiDataTextArrayPlace[j+1];
-                aqiDataTextArrayPlace[j+1] = q;
-            }
-        }
-    }
 
 
 
@@ -89,33 +33,23 @@ var aqiDataTextArrayIndexLength = aqiDataTextArrayIndex.length;
          遍历读取aqiData中各个城市的数据
          将空气质量指数大于60的城市显示到aqi-list的列表中
          */
-        var aqi_list = document.getElementById('aqi-list');
-        /*
-        遍历读取城市数据。
-        */
-        var place,index;
-        var aqiDataArraySort = [];
-
-        onload = function () {
-            var IndexNum = 0;//计算排名
-            for(place = 0;place <=5;place++) {
-                for (index = 0; index <= 5; index++){
-
-                    if((place == index) &&(aqiDataTextArrayIndex[place] > 60) ){
-                        IndexNum++;
-                        aqi_list.innerHTML += "<li>" + "第" + IndexNum + "名：" + aqiDataTextArrayPlace[place] + aqiDataTextArrayIndex[index] + "</li>";
-
-                    }
-                }
-            }
-
-
+        //为数组的值进行排序
+        aqiData.sort(function (Num1,Num2) {
+            Num2[0] - Num1[0];
+            return Num2[1] - Num1[1];
+        });
+        //排除小于于60的值
+        aqiData = aqiData.filter(function (Num) {
+            return Num[1] >=60;
+        });
+        //遍历排序数组
+        var aqiList = document.querySelector("#aqi-list");
+        var aqiRank = ["零","一","二","三","四","五","六","七","八","九","十"];
+        for(var i = 0; i < aqiData.length;i++){
+            aqiList.innerHTML += "<li>" + "第"+ aqiRank[i+1] + "名:" + aqiData[i][0] + "," + aqiData[i][1] + "</li>";
         }
 
-
     })();
-
-
 
 </script>
 </body>
