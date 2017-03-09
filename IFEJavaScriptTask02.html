@@ -5,7 +5,6 @@
     <title>IFE JavaScript Task 02</title>
 </head>
 <body>
-
 <h3>污染城市列表</h3>
 <ul id="aqi-list">
     <!--
@@ -33,26 +32,26 @@
          遍历读取aqiData中各个城市的数据
          将空气质量指数大于60的城市显示到aqi-list的列表中
          */
-        //利用数组下标，通过sort方法为数组的值进行排序，这里为数组排序的简写形式。
+        //利用数组下标，通过sort方法为数组的值进行排序，这里为数组排序的简写形式;
         aqiData.sort(function (Num1,Num2) {
             return Num1[1] - Num2[1];
         });
-        //排除小于于60的值,通过filter方法直接排除数组的值
+        //排除小于于60的值,通过filter方法直接排除数组的值;
         aqiData = aqiData.filter(function (Num) {
             return Num[1] >=60;
         });
         //遍历排序数组
-            var fragment = document.createDocumentFragment();//创建文档碎片，用于追加存储下面的子节点，能够减少多次遍历带来的性能影响，增加效率。
+            var fragment = document.createDocumentFragment();//创建文档碎片，用于追加存储下面的子节点，能够减少多次遍历带来的性能影响，增加效率;
             var aqiRank = ["零","一","二","三","四","五","六","七","八","九","十"];//对转换算法了解过少，所以就只弄了个粗浅的形式；
-            var aqiDataLength = aqiData.length;//保存长度为一个变量，避免循环遍历时重复多次计算长度
-            var aqiList = document.querySelector("#aqi-list");//querySelector方便查询，不过没document.getElementById效率要高，不过由于demo数据量少，就用方便点的查询方法吧。
+            var aqiDataLength = aqiData.length;//保存长度为一个变量，避免循环遍历时重复多次计算长度;
+            var aqiList = document.querySelector("#aqi-list");//querySelector方便查询，不过没document.getElementById效率要高，不过由于demo数据量少，就用方便点的查询方法吧;
             for(var i = 0; i < aqiDataLength;i++){
-                var oLi= document.createElement("li");//创建li标记
-                oLi.innerText =  "第"+ aqiRank[i+1] + "名:" + aqiData[i][0] + "," + aqiData[i][1]; //li标记内的内容
-                fragment.appendChild(oLi);//增加li子节点
+                var oLi= document.createElement("li");//创建li标记;
+                oLi.innerText =  "第"+ aqiRank[i+1] + "名:" + aqiData[i][0] + "," + aqiData[i][1]; //li标记内的内容;
+                fragment.appendChild(oLi);//增加li子节点;
             }
 
-            aqiList.appendChild(fragment);//将文档碎片追加在aqiList上
+            aqiList.appendChild(fragment);//将文档碎片追加在aqiList上;
 
 
     })();
