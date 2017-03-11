@@ -168,25 +168,25 @@
         float:left;
     }
 }
-//配置最小移动优先列容器的宽度
+/*配置最小移动优先列容器的宽度*/
 [class*="col-xs"]{
     width:100%;
-	float：left;
+    float: left;
 }
-//配置列的公共项
+/*配置列的公共项*/
 [class*='col-']{
     position: relative;
     min-height: 1px;
     padding: 12px;
 }
-//配置行容器
+/*配置行容器*/
 .row{
     clear: both;
     display: table;
     content: " ";
     width:100%;
  }
- //配置自适应容器宽度
+ /*配置自适应容器宽度*/
 .container-flud{
     width : 100%;
 }
