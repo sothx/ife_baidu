@@ -5,7 +5,61 @@
     -moz-box-sizing: border-box;/*兼容firefox*/
     box-sizing: border-box;
 }
+/*配置最小移动优先列容器的宽度*/
 /*配置布局容器和列容器*/
+@media (min-width: 0px){
+    .container{
+        width:0px;
+    }
+    .col-sm-1{
+        width:8.33333333%;
+        float:left;
+    }
+    .col-sm-2{
+        width:16.666666667%;
+        float:left;
+    }
+    .col-sm-3{
+        width:25%;
+        float:left;
+    }
+    .col-sm-4{
+        width:33.33333333%;
+        float:left;
+    }
+    .col-sm-5{
+        width:41.66666667%;
+        float:left;
+    }
+    .col-sm-6{
+        width:50%;
+        float:left;
+    }
+    .col-sm-7{
+        width:58.33333333%;
+        float:left;
+    }
+    .col-sm-8{
+        width:66.66666667%;
+        float:left;
+    }
+    .col-sm-9{
+        width:75%;
+        float:left;
+    }
+    .col-sm-10{
+        width:83.33333333%;
+        float:left;
+    }
+    .col-sm-11{
+        width:91.66666667%;
+        float:left;
+    }
+    .col-sm-12{
+        width:100%;
+        float:left;
+    }
+}
 @media (min-width: 768px){
     .container{
         width:750px;
@@ -169,11 +223,7 @@
         float:left;
     }
 }
-/*配置最小移动优先列容器的宽度*/
-[class*="col-xs"]{
-    width:100%;
-    float: left;
-}
+
 /*配置列的公共项*/
 [class*='col-']{
     position: relative;
