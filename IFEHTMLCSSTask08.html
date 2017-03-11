@@ -1,4 +1,4 @@
-<!doctype html>
+!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IFT HTML CSS Task 08</title>
     <link rel="stylesheet" href="css/IFEHTMLCSSTask08.css">
+    <style>
+        [class*="col-"]{
+            border:#999 1px solid;
+            background-color: #eee;
+            height:50px;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -26,6 +33,11 @@
             <div class="col-md-3">col-md-3</div>
             <div class="col-md-3">col-md-3</div>
             <div class="col-md-3">col-md-3</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">col-sm-3</div>
+            <div class="col-sm-6">col-sm-6</div>
+            <div class="col-sm-3">col-sm-3</div>
         </div>
     </div>
 </body>
